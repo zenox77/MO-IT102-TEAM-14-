@@ -1,7 +1,4 @@
-/*
-LinkedList (Singly) - Sample code/pseudocode (Java-style)
-Use-case: dynamic payroll/attendance records with frequent inserts/deletes.
-*/
+
 
 public class LinkedListSamples {
 
@@ -11,14 +8,14 @@ public class LinkedListSamples {
         Node(int d) { data = d; }
     }
 
-    // Basic use: 10 -> 20
+
     static Node basic() {
         Node head = new Node(10);
         head.next = new Node(20);
         return head;
     }
 
-    // Sort and Insert: insert into a sorted linked list
+
     static Node sortedInsert(Node head, int x) {
         Node n = new Node(x);
         if (head == null || x <= head.data) { n.next = head; return n; }
@@ -28,7 +25,7 @@ public class LinkedListSamples {
         return head;
     }
 
-    // Add and Delete: delete by value
+
     static Node deleteValue(Node head, int x) {
         if (head == null) return null;
         if (head.data == x) return head.next;
@@ -38,7 +35,7 @@ public class LinkedListSamples {
         return head;
     }
 
-    // Merge: merge two sorted linked lists
+
     static Node merge(Node a, Node b) {
         Node dummy = new Node(0), tail = dummy;
         while (a != null && b != null) {

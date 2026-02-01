@@ -1,7 +1,3 @@
-/*
-Trees (Binary Search Tree) - Sample code/pseudocode (Java-style)
-Use-case: hierarchical org structure or indexing employee records.
-*/
 
 import java.util.*;
 
@@ -13,7 +9,7 @@ public class BSTSamples {
         TNode(int k) { key = k; }
     }
 
-    // Insert
+
     static TNode insert(TNode r, int k) {
         if (r == null) return new TNode(k);
         if (k < r.key) r.left = insert(r.left, k);
@@ -21,7 +17,7 @@ public class BSTSamples {
         return r;
     }
 
-    // Inorder traversal (prints sorted order)
+
     static void inorder(TNode r) {
         if (r == null) return;
         inorder(r.left);
@@ -29,7 +25,6 @@ public class BSTSamples {
         inorder(r.right);
     }
 
-    // Delete node in BST
     static TNode delete(TNode r, int k) {
         if (r == null) return null;
         if (k < r.key) r.left = delete(r.left, k);
@@ -38,7 +33,7 @@ public class BSTSamples {
             if (r.left == null) return r.right;
             if (r.right == null) return r.left;
 
-            // replace with inorder successor (min in right subtree)
+        
             TNode s = r.right;
             while (s.left != null) s = s.left;
             r.key = s.key;
@@ -47,7 +42,7 @@ public class BSTSamples {
         return r;
     }
 
-    // Merge two BSTs via inorder lists -> build balanced BST
+
     static void inorderToList(TNode r, List<Integer> out) {
         if (r == null) return;
         inorderToList(r.left, out);
@@ -69,7 +64,7 @@ public class BSTSamples {
         inorderToList(r1, a);
         inorderToList(r2, b);
 
-        // merge sorted lists
+
         List<Integer> m = new ArrayList<>();
         int i = 0, j = 0;
         while (i < a.size() && j < b.size())
